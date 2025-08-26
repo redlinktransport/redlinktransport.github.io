@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedLink Coaches - New Routes Coming Soon!</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .company-logo {
+            height: 80px;
+            width: auto;
+            max-width: 200px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #dc2626;
+        }
+
+        /* Routes Section */
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .route-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        .route-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .route-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .route-icon {
+            background: #ef4444;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .route-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #dc2626;
+        }
+
+        .route-details {
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .detail-item i {
+            width: 20px;
+            color: #ef4444;
+            margin-right: 0.5rem;
+        }
+
+        .benefits {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .benefits h4 {
+            color: #dc2626;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .benefits ul {
+            list-style: none;
+        }
+
+        .benefits li {
+            padding: 0.25rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits li:before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        /* Interest Form Section */
+        .form-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .form-section h3 {
+            font-size: 2rem;
+            color: #dc2626;
+            margin-bottom: 1rem;
+        }
+
+        .form-section p {
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .google-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .google-form-placeholder {
+            background: #f8fafc;
+            border: 2px dashed #d1d5db;
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .google-form-placeholder h4 {
+            color: #374151;
+            margin-bottom: 1rem;
+        }
+
+        .google-form-placeholder p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-setup-button {
+            background: #10b981;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-setup-button:hover {
+            background: #059669;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: #dc2626;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #f59e0b;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .routes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .route-card {
+                padding: 1.5rem;
+            }
+
+            .form-section {
+                padding: 2rem 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 2rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation for cards */
+        .route-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-bus"></i>
+                    RedLink Coaches
+                </div>
+                <svg class="company-logo" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Coach/Bus Body -->
+                    <rect x="10" y="30" width="120" height="40" rx="8" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+                    
+                    <!-- Windows -->
+                    <rect x="20" y="35" width="15" height="12" rx="2" fill="white" opacity="0.9"/>
+                    <rect x="40" y="35" width="15" height="12" rx="2" fill="white" opacity="0.9"/>
+                    <rect x="60" y="35" width="15" height="12" rx="2" fill="white" opacity="0.9"/>
+                    <rect x="80" y="35" width="15" height="12" rx="2" fill="white" opacity="0.9"/>
+                    <rect x="100" y="35" width="15" height="12" rx="2" fill="white" opacity="0.9"/>
+                    
+                    <!-- Front windscreen -->
+                    <rect x="15" y="35" width="12" height="15" rx="2" fill="white" opacity="0.9"/>
+                    
+                    <!-- Door -->
+                    <rect x="25" y="50" width="8" height="15" rx="1" fill="#b91c1c"/>
+                    
+                    <!-- Wheels -->
+                    <circle cx="30" cy="75" r="8" fill="#374151"/>
+                    <circle cx="30" cy="75" r="5" fill="#6b7280"/>
+                    <circle cx="100" cy="75" r="8" fill="#374151"/>
+                    <circle cx="100" cy="75" r="5" fill="#6b7280"/>
+                    
+                    <!-- Headlights -->
+                    <circle cx="8" cy="45" r="3" fill="#fbbf24"/>
+                    <circle cx="8" cy="55" r="3" fill="#ef4444"/>
+                    
+                    <!-- Company Text -->
+                    <text x="140" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#000000">RedLink</text>
+                    <text x="140" y="55" font-family="Arial, sans-serif" font-size="12" font-weight="normal" fill="#000000" letter-spacing="2px">COACHES</text>
+                    
+                    <!-- Decorative line -->
+                    <line x1="140" y1="60" x2="250" y2="60" stroke="#dc2626" stroke-width="2"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Exciting New Routes Coming Soon!</h1>
+            <p>RedLink Coaches is expanding our service with two brand new routes designed to better connect your community. Help us shape the future of local transport!</p>
+            <a href="#interest-form" class="cta-button">
+                <i class="fas fa-clipboard-list"></i> Show Your Interest
+            </a>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <section class="section">
+                <h2>Proposed New Routes</h2>
+                <div class="routes-grid">
+                    <!-- Route 1 -->
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <div class="route-title">Route A: Lincoln City FC Shuttle</div>
+                        </div>
+                        <div class="route-details">
+                            <div class="detail-item">
+                                <i class="fas fa-route"></i>
+                                <span><strong>Route:</strong> Newark Bus Station → Sincil Bank Stadium</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Departure:</strong> You will be emailed of the Departure Time 1 day before the match</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Operating Days:</strong> Home match days only</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span><strong>Journey Time:</strong> Approximately 30 minutes (arrive 1 hour before kick-off)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Capacity:</strong> 1 minibus with 16-18 seats</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <h4>Key Benefits:</h4>
+                            <ul>
+                                <li>Skip match day traffic and parking hassles</li>
+                                <li>Direct drop-off at Sincil Bank Stadium</li>
+                                <li>Return service after final whistle</li>
+                                <li>Support the Imps in comfort and style</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Route 2 -->
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-umbrella-beach"></i>
+                            </div>
+                            <div class="route-title">Route B: Summer Cromer Day Trip</div>
+                        </div>
+                        <div class="route-details">
+                            <div class="detail-item">
+                                <i class="fas fa-route"></i>
+                                <span><strong>Route:</strong> Newark Bus Station → Cromer → Return</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Frequency:</strong> Daily departures during summer season</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Operating Days:</strong> June to September</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span><strong>Journey Time:</strong> Full day trip (8 hours including stops)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Capacity:</strong> 1 minibus with 16-18 seats</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <h4>Key Benefits:</h4>
+                            <ul>
+                                <li>Explore beautiful Norfolk coastal towns</li>
+                                <li>No driving stress or parking fees</li>
+                                <li>More time to explore Cromer's attractions</li>
+                                <li>Enjoy Cromer's famous crab and sandy beaches</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Route 3 -->
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="route-title">Route C: Nottingham Christmas Shuttle</div>
+                        </div>
+                        <div class="route-details">
+                            <div class="detail-item">
+                                <i class="fas fa-route"></i>
+                                <span><strong>Route:</strong> Newark Bus Station → Old Market Square</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Schedule:</strong> 14th of November every year</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Operating Days:</strong> Annual Christmas market trip</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span><strong>Journey Time:</strong> Approximately 45 minutes</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Capacity:</strong> 1 minibus with 16-18 seats</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <h4>Key Benefits:</h4>
+                            <ul>
+                                <li>Skip traffic and parking hassles in Nottingham</li>
+                                <li>Direct drop-off at Old Market Square</li>
+                                <li>Return service after Christmas market visit</li>
+                                <li>Enjoy festive atmosphere without driving stress</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Route 4 -->
+                    <div class="route-card">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-gifts"></i>
+                            </div>
+                            <div class="route-title">Route D: Christmas Hamleys Shuttle</div>
+                        </div>
+                        <div class="route-details">
+                            <div class="detail-item">
+                                <i class="fas fa-route"></i>
+                                <span><strong>Route:</strong> Newark Bus Station → Hamleys London</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><strong>Schedule:</strong> Once a year around Christmas - Pick up at 7AM Drop off at 10AM, pick up at 5PM and Drop Off at 8PM</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><strong>Operating Days:</strong> Annual Christmas shopping trip</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span><strong>Journey Time:</strong> Approximately 2 hours 45 minutes</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-users"></i>
+                                <span><strong>Capacity:</strong> 1 minibus with 16-18 seats</span>
+                            </div>
+                        </div>
+                        <div class="benefits">
+                            <h4>Key Benefits:</h4>
+                            <ul>
+                                <li>Skip London traffic and expensive parking</li>
+                                <li>Direct drop-off at world-famous Hamleys toy store</li>
+                                <li>Full day to explore London's Christmas attractions</li>
+                                <li>Perfect for Christmas shopping without driving stress</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="interest-form">
+                <div class="form-section">
+                    <h3>Tell Us What You Think!</h3>
+                    <p>Your feedback is crucial in helping us understand community needs. Please take a moment to share your thoughts on these proposed routes.</p>
+                    
+                    <div class="google-form-container">
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeK-0c4mMCF6G2BywgQENBe4mFkub6ri2zsQlbjLQGJUKjJMg/viewform?embedded=true" width="100%" height="963" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="container">
+                    <h2>Get In Touch</h2>
+                    <p>Have questions about the new routes? We'd love to hear from you!</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <h4>Email</h4>
+                            <p>info@redlinktransport.com</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 RedLink Coaches. All rights reserved. | Connecting communities, one route at a time.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Function to show Google Form setup instructions
+        function showFormInstructions() {
+            alert(`To integrate your Google Form:
+
+1. Go to forms.google.com and create a new form
+2. Add questions like:
+   - Which route interests you most?
+   - How often would you use this service?
+   - What times would you travel?
+   - Your contact details (optional)
+3. Click "Send" → "Embed" → Copy the iframe code
+4. Replace the placeholder iframe src with your form URL
+5. Update the display style to show the actual form
+
+Example questions for your form:
+• Which proposed route would you be most likely to use?
+• How frequently would you use this service?
+• What are your preferred travel times?
+• Any additional stops you'd like to see?
+• Your postcode (to understand demand areas)
+• Contact details for updates (optional)`);
+        }
+
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe route cards for animation
+        document.querySelectorAll('.route-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '1';
+        });
+    </script>
+</body>
+</html>

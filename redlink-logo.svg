@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#e5e5e5"/>
+  <g fill="#c53030">
+    <!-- Bus silhouette -->
+    <path d="M50 150 Q50 130 70 130 L180 130 Q200 130 200 150 L200 250 Q200 270 180 270 L70 270 Q50 270 50 250 Z"/>
+    <rect x="60" y="140" width="30" height="20" rx="3" fill="white"/>
+    <rect x="100" y="140" width="30" height="20" rx="3" fill="white"/>
+    <rect x="140" y="140" width="30" height="20" rx="3" fill="white"/>
+    <rect x="60" y="170" width="30" height="20" rx="3" fill="white"/>
+    <rect x="100" y="170" width="30" height="20" rx="3" fill="white"/>
+    <rect x="140" y="170" width="30" height="20" rx="3" fill="white"/>
+    <circle cx="80" cy="250" r="15" fill="#c53030"/>
+    <circle cx="170" cy="250" r="15" fill="#c53030"/>
+    <circle cx="80" cy="250" r="8" fill="white"/>
+    <circle cx="170" cy="250" r="8" fill="white"/>
+    <rect x="190" y="200" width="40" height="8" rx="4"/>
+    
+    <!-- Text -->
+    <text x="280" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold">RedLink</text>
+    <text x="280" y="260" font-family="Arial, sans-serif" font-size="36" font-weight="normal" letter-spacing="8px">COACHES</text>
+  </g>
+</svg>
